@@ -28,6 +28,13 @@ section .font {
 
 
 
+#glacier-svg {
+	width: 250px;
+	height: 250px;
+	background-image: url("../src/AWS_Simple_Icons_Amazon_Glacier.svg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
 
 * {
 	box-sizing: border-box;
