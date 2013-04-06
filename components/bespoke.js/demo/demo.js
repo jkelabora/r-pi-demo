@@ -7,8 +7,9 @@
 		deck;
 
 	function init() {
-		deck = bespoke.from('article');
-		initThemeSwitching();
+		// deck = bespoke.from('article');
+		// initThemeSwitching();
+		bespoke.horizontal.from('article');
 	}
 
 	init();
