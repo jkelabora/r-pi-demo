@@ -34,7 +34,6 @@ a {
 
 h1 {
 	color: white;
-	/*font-family: Raleway Dots;*/
 	font-family: 'Press Start 2P', cursive;
 
 	/* Fix thin font rendering on Windows */
@@ -60,10 +59,48 @@ h1 {
 	margin-left: -538px;
 }
 
-span.quote {
-	margin-top: 460px;
+span.line {
 	position: absolute;
-	margin-left: 500px;
+	z-index: 20;
+	top: 264px;
+	left: 125px;
+}
+
+.line .green {
+	font-family: 'Passion One', cursive;
+	-webkit-transition: opacity 2s ease;
+	-moz-transition: opacity 2s ease;
+	-ms-transition: opacity 2s ease;
+	-o-transition: opacity 2s ease;
+	transition: opacity 2s ease;
+	z-index: 30;
+	text-align: center;
+	font-size: 200px;
+	font-weight: 200;
+	color: green;
+	margin-left: 35px;
+
+}
+.line .blue {
+	font-family: 'Passion One', cursive;
+	-webkit-transition: opacity 2s ease;
+	-moz-transition: opacity 2s ease;
+	-ms-transition: opacity 2s ease;
+	-o-transition: opacity 2s ease;
+	transition: opacity 2s ease;
+	z-index: 30;
+	text-align: center;
+	font-size: 200px;
+	font-weight: 200;
+	color: blue;
+	margin-left: 35px;
+}
+
+
+span.quote {
+	margin-top: 475px;
+	position: absolute;
+	margin-left: 570px;
 }
 
 .quote .start {
