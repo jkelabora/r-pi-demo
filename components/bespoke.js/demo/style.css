@@ -251,6 +251,14 @@ section.bespoke-active {
 	z-index: 1;
 }
 
+section#one img {
+	margin-top: 115px;
+	margin-left: 530px;
+}
+
+section#one h1 {
+	top: 72%;
+}
 
 section#three img {
 	width: 496px;
