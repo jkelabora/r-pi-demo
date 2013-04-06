@@ -251,6 +251,12 @@ section.bespoke-active {
 	z-index: 1;
 }
 
+
+section#three img {
+	width: 496px;
+	height: 350px;
+}
+
 @media only screen and (max-width: 768px) {
 	body {
 		font-size: 10px;
