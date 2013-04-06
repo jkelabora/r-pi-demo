@@ -6,24 +6,59 @@ from boto.sqs.message import RawMessage
 
 conn = boto.sqs.connect_to_region('ap-southeast-2')
 sqs_q = conn.get_queue('r-pi')
-
-raw_input("Press Enter to continue...")
-
 m = RawMessage()
-m.set_body('This is awesome...')
+
+# =========================================================
+raw_input("Start First Pipeline...")
+m.set_body('Build SUCCESS: Prepare #')
 sqs_q.write(m)
 
+raw_input("unit tests pass...")
+m.set_body('Build SUCCESS: Unit Tests #')
+sqs_q.write(m)
 
+raw_input("integration tests pass...")
+m.set_body('Build SUCCESS: Integration Tests #')
+sqs_q.write(m)
 
+raw_input("deploy test pass...")
+m.set_body('Build SUCCESS: Deploy Test #')
+sqs_q.write(m)
 
+raw_input("deploy to QA pass...")
+m.set_body('Build SUCCESS: Deploy to QA #')
+sqs_q.write(m)
 
+raw_input("deploy to Production pass...")
+m.set_body('Build SUCCESS: Deploy to Production #')
+sqs_q.write(m)
 
+# =========================================================
+raw_input("Start Second Pipeline...")
+m.set_body('Build SUCCESS: DT - Prepare #')
+sqs_q.write(m)
 
+raw_input("unit tests pass...")
+m.set_body('Build SUCCESS: DT - Unit Test #')
+sqs_q.write(m)
 
+raw_input("oops! abort a hanging deploy test...")
+m.set_body('Build ABORTED: DT - Deploy Test #')
+sqs_q.write(m)
 
+raw_input("nup... deploy test failed..")
+m.set_body('Build FAILURE: DT - Deploy Test #')
+sqs_q.write(m)
 
+raw_input("fix the env... deploy test pass..")
+m.set_body('Build SUCCESS: DT - Deploy Test #')
+sqs_q.write(m)
 
+raw_input("deploy to QA pass..")
+m.set_body('Build SUCCESS: DT - Deploy QA #')
+sqs_q.write(m)
 
+# =========================================================
 
 
 
