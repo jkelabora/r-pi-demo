@@ -104,7 +104,8 @@ footer a {
 
 h1 {
 	color: white;
-	font-family: Raleway Dots;
+	/*font-family: Raleway Dots;*/
+	font-family: 'Press Start 2P', cursive;
 
 	/* Fix thin font rendering on Windows */
 	font-size: 156px;
@@ -126,7 +127,7 @@ h1 {
 
 	width: 776px;
 	left: 50%;
-	margin-left: -388px;
+	margin-left: -538px;
 }
 
 h2 {
@@ -138,12 +139,12 @@ h2 {
 	position: absolute;
 	left: 0;
 	right: 0;
-	top: 50%;
+	top: 75%;
 	z-index: 30;
 	margin-top: 14px;
 	text-align: center;
 	font-family: Gill Sans, Segoe UI Light, Helvetica, Arial, sans-serif;
-	font-size: 17px;
+	font-size: 44px;
 	font-weight: 200;
 	color: white;
 	opacity: 0.9;
@@ -228,12 +229,12 @@ section {
 	transform: none;
 	background: #c0c0c0;
 	border-radius: 30px;
-	width: 512px;
-	height: 380px;
+	width: 1024px;
+	height: 600px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	margin-left: -256px;
+	margin-left: -474px;
 	margin-top: -220px;
 	opacity: 0;
 }
