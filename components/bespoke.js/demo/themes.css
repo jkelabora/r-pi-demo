@@ -95,14 +95,14 @@
 
 /* Coverflow Theme */
 .coverflow {
-	background: rgba(42, 206, 185, 0.2);
+	background: rgba(227, 11, 92, 0.2);
 }
 .coverflow section,
 .coverflow .arrow:hover {
-	background: rgb(42, 206, 185);
+	background: rgb(227, 11, 92);
 }
 .coverflow a {
-	color: rgb(42, 206, 185);
+	color: rgb(227, 11, 92);
 }
 .coverflow section.bespoke-before {
 	-webkit-transform: translateX(-270px) rotateY(45deg) scale(0.6);
