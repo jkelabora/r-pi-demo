@@ -16,10 +16,13 @@
 
 <section data-bespoke-state="pre-progress clean" class="font">
 	<pre data-bespoke-bullet class="font">
-		<code data-language="css" class"rainbow">
-			body {
-   				font-family: helvetica;
-			}
+		<code data-language="python" class"rainbow">
+			from lib.base_message_interface import BaseMessageInterface
+
+			class SimpleMessageTranslator:
+			    def __init__(self):
+			        self.base_message_interface = BaseMessageInterface()
+
 		</code>
 	</pre>
 </section>

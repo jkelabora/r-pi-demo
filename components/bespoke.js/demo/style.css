@@ -1,19 +1,28 @@
-article pre .css-property,
+article pre .python-property,
 article pre .numeric,
 article pre .unit,
 article pre .keyword,
 article pre .constant {
-  color: #303030;
+  color: rgb(31, 219, 255);
 }
-article pre .css-value,
+article pre .python-value,
 article pre .string {
   color: #ff349d;
+}
+
+article pre .function {
+	color: rgb(248, 142, 8);
+}
+
+article pre .operator {
+	color: rgb(216, 60, 255);
 }
 
 
 section .font {
 	margin-top: 300px;
-	background-color: white;
+	background-color: rgb(53, 52, 52);
+	color: white;
 }
 
 
