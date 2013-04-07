@@ -18,15 +18,15 @@ article pre .operator {
 	color: rgb(216, 60, 255);
 }
 
-section .font {
-	margin-top: 232px;
+section#very-first .font {
+	margin-top: 160px;
 	background-color: rgb(53, 52, 52);
 	color: white;
 	font-size: 25px;
 }
 
 section#very-first h1 {
-	top: 37%;
+	top: 25%;
 }
 
 

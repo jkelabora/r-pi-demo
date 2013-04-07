@@ -15,18 +15,20 @@
 
 
 <section id='very-first'  data-bespoke-state="pre-progress clean" class="font">
-					<h1>Codez</h1>
+	<h1>Pipelinez</h1>
 	<pre data-bespoke-bullet class="font">
-		<!-- <div class='codez'> -->
 		<code data-language="python" class"rainbow">
-    from lib.base_message_interface import BaseMessageInterface
+    first_pipeline = {
+        'OFFSET' : 0,
+        'STAGE_WIDTH' : 4,
+        'STAGES' : [ 'Prepare', 'Unit Tests' ... ]
+    }
 
-    class SimpleMessageTranslator:
-
-      def __init__(self):
-        self.base_message_interface = BaseMessageInterface()
+    class JenkinsMessageTranslator:
+        def __init__(self):
+            self.pipelines = [ Pipeline(first_pipeline) ... ]
+            self.sound_player = Player()
 		</code>
-<!-- </div> -->
 	</pre>
 </section>
 
