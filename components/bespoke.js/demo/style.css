@@ -18,10 +18,7 @@ article pre .operator {
 	color: rgb(216, 60, 255);
 }
 
-/*article pre */
-
 section .font {
-	/*margin-top: 300px;*/
 	margin-top: 232px;
 	background-color: rgb(53, 52, 52);
 	color: white;
@@ -121,7 +118,7 @@ span.line {
 	font-size: 200px;
 	font-weight: 200;
 	color: green;
-	margin-left: 35px;
+	margin-left: 30px;
 
 }
 .line .blue {
@@ -136,7 +133,7 @@ span.line {
 	font-size: 200px;
 	font-weight: 200;
 	color: blue;
-	margin-left: 35px;
+	margin-left: 30px;
 }
 
 
@@ -280,6 +277,12 @@ section#one h1 {
 section#three img {
 	width: 496px;
 	height: 350px;
+}
+
+section#diagram img {
+	width: 1000px;
+	height: 583px;
+	margin-left: 15px;
 }
 
 @media only screen and (max-width: 768px) {
