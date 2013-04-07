@@ -274,9 +274,16 @@ section#one h1 {
 	top: 72%;
 }
 
-section#three img {
+section#r-pi h1 {
+	top: 28%;
+	left: 46%;
+}
+
+section#r-pi img {
 	width: 496px;
 	height: 350px;
+	margin-top: 185px;
+	margin-left: 280px;
 }
 
 section#diagram img {
