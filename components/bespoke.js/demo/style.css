@@ -18,14 +18,19 @@ article pre .operator {
 	color: rgb(216, 60, 255);
 }
 
+/*article pre */
 
 section .font {
-	margin-top: 300px;
+	/*margin-top: 300px;*/
+	margin-top: 232px;
 	background-color: rgb(53, 52, 52);
 	color: white;
+	font-size: 25px;
 }
 
-
+section#very-first h1 {
+	top: 37%;
+}
 
 
 #glacier-svg {
