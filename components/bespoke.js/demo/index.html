@@ -13,26 +13,6 @@
 		<div id="main">
 			<article>
 
-
-<section id='very-first'  data-bespoke-state="pre-progress clean" class="font">
-	<h1>Pipelinez</h1>
-	<pre data-bespoke-bullet class="font">
-		<code data-language="python" class"rainbow">
-    first_pipeline = {
-        'OFFSET' : 0,
-        'STAGE_WIDTH' : 4,
-        'STAGES' : [ 'Prepare', 'Unit Tests' ... ]
-    }
-
-    class JenkinsMessageTranslator:
-        def __init__(self):
-            self.pipelines = [ Pipeline(first_pipeline) ... ]
-            self.sound_player = Player()
-		</code>
-	</pre>
-</section>
-
-				<section></section>
 				<section>
 					<h1>Raspberry Pipeline</h1>
 					<span class='line'>
@@ -51,6 +31,44 @@
 						<span class='end'>”</span>
 					</span>
 				</section>
+
+				<section id='very-first' data-bespoke-state="pre-progress clean" class="font">
+					<h1>Pipelinez</h1>
+					<pre data-bespoke-bullet class="font">
+						<code data-language="python" class"rainbow">
+    first_pipeline = {
+        'OFFSET' : 0,
+        'STAGE_WIDTH' : 4,
+        'STAGES' : [ 'Prepare', 'Unit Tests' ... ]
+    }
+
+    class JenkinsMessageTranslator:
+        def __init__(self):
+            self.pipelines = [ Pipeline(first_pipeline) ... ]
+            self.sound_player = Player()
+		</code>
+					</pre>
+				</section>
+				
+				<section id='another' data-bespoke-state="pre-progress clean" class="font">
+					<h1>Pipeline</h1>
+					<pre data-bespoke-bullet class="font">
+						<code data-language="python" class"rainbow">
+    base_animation_colours = [[0,0,250],[0,0,225] ... ]
+    base_message_interface = BaseMessageInterface()
+
+    class Pipeline:
+        def issue_all_off(self):
+          ...
+        def issue_start_build(self):
+          ...
+        def issue_all_stages_update(self, colour):
+          ...
+        def issue_update_segment(self, segment_number, colour):
+  	</code>
+					</pre>
+				</section>
+
 				<section id='three'><img src='../src/RaspiModelB.png'></section>
 				<section id='diagram'><img src='../src/r-pi-diagram.png'></section>
 				<section></section>
