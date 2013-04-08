@@ -143,13 +143,31 @@ span.line {
 }
 
 
-span.quote {
-	margin-top: 475px;
+span.quote1 {
+	margin-top: 212px;
 	position: absolute;
 	margin-left: 570px;
 }
 
-.quote .start {
+span.quote2 {
+	margin-top: 262px;
+	position: absolute;
+	margin-left: 128px;
+}
+
+span.quote3 {
+	margin-top: 352px;
+	position: absolute;
+	margin-left: 303px;
+}
+
+span.quote4 {
+	margin-top: 450px;
+	position: absolute;
+	margin-left: 108px;
+}
+
+.start {
 	font-family: 'Passion One', cursive;
 	-webkit-transition: opacity 2s ease;
 	-moz-transition: opacity 2s ease;
@@ -164,7 +182,7 @@ span.quote {
 	opacity: 0.7;
 
 }
-.quote .end {
+.end {
 	font-family: 'Passion One', cursive;
 	-webkit-transition: opacity 2s ease;
 	-moz-transition: opacity 2s ease;
@@ -180,7 +198,7 @@ span.quote {
 
 }
 
-.quote .content {
+.content {
 	-webkit-transition: opacity 2s ease;
 	-moz-transition: opacity 2s ease;
 	-ms-transition: opacity 2s ease;
@@ -276,6 +294,11 @@ section#one img {
 	margin-left: 530px;
 }
 
+section#explanation h1 {
+	left: 42%;
+	margin-top: -230px;
+}
+
 section#one h1 {
 	top: 72%;
 }
@@ -283,6 +306,12 @@ section#one h1 {
 section#r-pi h1 {
 	top: 28%;
 	left: 46%;
+}
+
+section#demo h1 {
+	width: 780px;
+	left: 80%;
+	top: 40%;
 }
 
 section#r-pi img {

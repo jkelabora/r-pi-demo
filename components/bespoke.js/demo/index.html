@@ -27,11 +27,26 @@
 					</span>
 				</section>
 
-				<section>
+				<section id='explanation'>
 					<h1>Pipeline?</h1>
-					<span class='quote'>
+					<span class='quote1'>
 						<span class='start'>“</span>
-						<span class='content'>It's a thing.. for sure</span>
+						<span class='content'>It's fast feedback</span>
+						<span class='end'>”</span>
+					</span>
+					<span class='quote2'>
+						<span class='start'>“</span>
+						<span class='content'>It's risk minimisation</span>
+						<span class='end'>”</span>
+					</span>
+					<span class='quote3'>
+						<span class='start'>“</span>
+						<span class='content'>It's an 'Information Radiator'</span>
+						<span class='end'>”</span>
+					</span>
+					<span class='quote4'>
+						<span class='start'>“</span>
+						<span class='content'> It's a whole of boxes you should be ticking..</span>
 						<span class='end'>”</span>
 					</span>
 				</section>
@@ -109,7 +124,7 @@
         def __init__(self, local_q):
           threading.Thread.__init__(self)
           self.local_q = local_q
-          self.sqs_q = ...[based on env var's]...
+          self.sqs_q = ...[based on env variables]...
 
         def run(self):
           poll = True
@@ -144,6 +159,8 @@
     </code>
 					</pre>
 				</section>
+
+				<section id='demo'><h1>----></h1></section>
 
 			</article>
 		</div>
