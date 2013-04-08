@@ -66,38 +66,59 @@
           <h1>Pipelinez</h1>
           <pre data-bespoke-bullet class="font">
             <code data-language="python" class"rainbow">
-    first_pipeline = {
-        'OFFSET' : 0,
-        'STAGE_WIDTH' : 4,
-        'STAGES' : [ 'Prepare', 'Unit Tests' ... ]
-    }
+      first_pipeline = {
+          'OFFSET' : 0,
+          'STAGE_WIDTH' : 4,
+          'STAGES' : [ 'Prepare', 'Unit Tests' ... ]
+      }
 
-    class JenkinsMessageTranslator:
-        def __init__(self):
-            self.pipelines = [ Pipeline(first_pipeline) ... ]
-            self.sound_player = Player()
+      class JenkinsMessageTranslator:
+          def __init__(self):
+              self.pipelines = [ Pipeline(first_pipeline) ... ]
+              self.sound_player = Player()
     </code>
           </pre>
         </section>
 
-				<section id='yet-another' data-bespoke-state="pre-progress clean" class="font">
+        <section id='yet-another' data-bespoke-state="pre-progress clean" class="font">
+          <pre data-bespoke-bullet class="font">
+            <code data-language="python" class"rainbow">
+      class Strand:
+          def __init__(self, leds=32, dev="/dev/spidev0.0"):
+              self.spi = file(dev, "wb")
+              self.gamma = bytearray(256)
+              self.buffer = [0 for x in range(leds)]
+
+          def update(self):
+              for x in range(self.leds):
+                self.spi.write(self.buffer[x])
+              self.spi.flush()
+
+          def set(self, pixel, r, g, b):
+              self.buffer[pixel][0] = self.gamma[int(g)]
+              ...
+              self.update()
+    </code>
+          </pre>
+        </section>
+
+				<section id='moar-codez' data-bespoke-state="pre-progress clean" class="font">
 					<pre data-bespoke-bullet class="font">
 						<code data-language="python" class"rainbow">
-    class Strand:
-        def __init__(self, leds=32, dev="/dev/spidev0.0"):
-            self.spi = file(dev, "wb")
-            self.gamma = bytearray(256)
-            self.buffer = [0 for x in range(leds)]
-
-        def update(self):
-            for x in range(self.leds):
-              self.spi.write(self.buffer[x])
-            self.spi.flush()
-
-        def set(self, pixel, r, g, b):
-            self.buffer[pixel][0] = self.gamma[int(g)]
-            ...
-            self.update()
+    def main():
+        translator = JenkinsMessageTranslator()
+        local_q = Queue.Queue()
+        PollSQSWorker(local_q).start()
+        current_directive = 'all_off'
+        while True:
+            try:
+                translator.issue_directive(current_directive)
+                job = local_q.get_nowait() # usually Queue.Empty
+                current_directive = job
+                local_q.task_done()
+                PollSQSWorker(local_q).start()
+            except Queue.Empty:
+                sleep(0.03) # loop fast enough for animations
     </code>
 					</pre>
 				</section>
