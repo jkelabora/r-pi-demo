@@ -62,10 +62,10 @@
 					</pre>
 				</section>
 
-				<section id='very-first' data-bespoke-state="pre-progress clean" class="font">
-					<h1>Pipelinez</h1>
-					<pre data-bespoke-bullet class="font">
-						<code data-language="python" class"rainbow">
+        <section id='very-first' data-bespoke-state="pre-progress clean" class="font">
+          <h1>Pipelinez</h1>
+          <pre data-bespoke-bullet class="font">
+            <code data-language="python" class"rainbow">
     first_pipeline = {
         'OFFSET' : 0,
         'STAGE_WIDTH' : 4,
@@ -76,11 +76,32 @@
         def __init__(self):
             self.pipelines = [ Pipeline(first_pipeline) ... ]
             self.sound_player = Player()
-		</code>
+    </code>
+          </pre>
+        </section>
+
+				<section id='yet-another' data-bespoke-state="pre-progress clean" class="font">
+					<pre data-bespoke-bullet class="font">
+						<code data-language="python" class"rainbow">
+    class Strand:
+        def __init__(self, leds=32, dev="/dev/spidev0.0"):
+            self.spi = file(dev, "wb")
+            self.gamma = bytearray(256)
+            self.buffer = [0 for x in range(leds)]
+
+        def update(self):
+            for x in range(self.leds):
+              self.spi.write(self.buffer[x])
+            self.spi.flush()
+
+        def set(self, pixel, r, g, b):
+            self.buffer[pixel][0] = self.gamma[int(g)]
+            ...
+            self.update()
+    </code>
 					</pre>
 				</section>
 
-				<section></section>
 			</article>
 		</div>
 

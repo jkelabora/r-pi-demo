@@ -29,6 +29,12 @@ section#very-first h1, section#another h1 {
 	top: 25%;
 }
 
+section#yet-another .font {
+	margin-top: 40px;
+	background-color: rgb(53, 52, 52);
+	color: white;
+	font-size: 25px;
+}
 
 #glacier-svg {
 	width: 250px;
