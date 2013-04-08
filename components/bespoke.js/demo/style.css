@@ -314,6 +314,20 @@ section#demo h1 {
 	top: 40%;
 }
 
+section#closing h1 {
+	margin-top: -242px;
+	left: 40%;
+}
+
+div#end-things {
+	background-color: white;
+	width: 364px;
+	height: 402px;
+	position: absolute;
+	top: 33%;
+	left: 54%;
+}
+
 section#r-pi img {
 	width: 496px;
 	height: 350px;
@@ -325,6 +339,22 @@ section#diagram img {
 	width: 1000px;
 	height: 583px;
 	margin-left: 15px;
+}
+
+section#closing img#one {
+	margin-top: 15px;
+	margin-left: 10px;
+}
+section#closing img#two {
+	margin-left: 6px;
+}
+section#closing img#three {
+	margin-top: 4px;
+	margin-left: 13px;
+}
+section#closing img#gh-logo {
+	width: 255px;
+	margin-left: 57px;
 }
 
 @media only screen and (max-width: 768px) {
