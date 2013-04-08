@@ -43,6 +43,28 @@
 
 				<section id='diagram'><img src='../src/r-pi-diagram.png'></section>
 				
+        <section id='yet-another' data-bespoke-state="pre-progress clean" class="font">
+          <pre data-bespoke-bullet class="font">
+            <code data-language="python" class"rainbow">
+      class Strand:
+          def __init__(self, leds=32, dev="/dev/spidev0.0"):
+              self.spi = file(dev, "wb")
+              self.gamma = bytearray(256)
+              self.buffer = [0 for x in range(leds)]
+
+          def update(self):
+              for x in range(self.leds):
+                self.spi.write(self.buffer[x])
+              self.spi.flush()
+
+          def set(self, pixel, r, g, b):
+              self.buffer[pixel][0] = self.gamma[int(g)]
+              ...
+              self.update()
+    </code>
+          </pre>
+        </section>
+
 				<section id='another' data-bespoke-state="pre-progress clean" class="font">
 					<h1>Pipeline</h1>
 					<pre data-bespoke-bullet class="font">
@@ -80,24 +102,24 @@
           </pre>
         </section>
 
-        <section id='yet-another' data-bespoke-state="pre-progress clean" class="font">
+        <section id='worker' data-bespoke-state="pre-progress clean" class="font">
           <pre data-bespoke-bullet class="font">
             <code data-language="python" class"rainbow">
-      class Strand:
-          def __init__(self, leds=32, dev="/dev/spidev0.0"):
-              self.spi = file(dev, "wb")
-              self.gamma = bytearray(256)
-              self.buffer = [0 for x in range(leds)]
+      class PollSQSWorker(threading.Thread):
+        def __init__(self, local_q):
+          threading.Thread.__init__(self)
+          self.local_q = local_q
+          self.sqs_q = ...[based on env var's]...
 
-          def update(self):
-              for x in range(self.leds):
-                self.spi.write(self.buffer[x])
-              self.spi.flush()
-
-          def set(self, pixel, r, g, b):
-              self.buffer[pixel][0] = self.gamma[int(g)]
-              ...
-              self.update()
+        def run(self):
+          poll = True
+          while poll:
+            sleep(1.0)
+            job = self.sqs_q.read()
+            if job is not None:
+              self.local_q.put(job.get_body())
+              self.sqs_q.delete_message(job)
+              poll = False
     </code>
           </pre>
         </section>

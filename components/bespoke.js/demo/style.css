@@ -25,11 +25,11 @@ section#very-first .font, section#another .font {
 	font-size: 25px;
 }
 
-section#very-first h1, section#another h1 {
+section#very-first h1, section#another h1, section#worker h1 {
 	top: 25%;
 }
 
-section#yet-another .font, section#moar-codez .font {
+section#yet-another .font, section#moar-codez .font, section#worker .font {
 	margin-top: 40px;
 	background-color: rgb(53, 52, 52);
 	color: white;
