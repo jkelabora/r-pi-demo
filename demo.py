@@ -14,7 +14,7 @@ m.set_body('Build SUCCESS: Prepare #')
 sqs_q.write(m)
 
 raw_input("unit tests pass...")
-m.set_body('Build SUCCESS: Unit Tests #')
+m.set_body('Build SUCCESS: unit-tests #')
 sqs_q.write(m)
 
 raw_input("integration tests pass...")
