@@ -5,41 +5,66 @@ from boto import sqs
 from boto.sqs.message import RawMessage
 
 conn = boto.sqs.connect_to_region('ap-southeast-2')
-sqs_q = conn.get_queue('r-pi')
+sqs_q = conn.get_queue('raspberry-pipeline')
 m = RawMessage()
 
 # =========================================================
 raw_input("Start First Pipeline...")
-m.set_body('Build SUCCESS: Prepare #')
+m.set_body('Build SUCCESS: WF - Prepare #')
 sqs_q.write(m)
 
 raw_input("unit tests pass...")
-m.set_body('Build SUCCESS: unit-tests #')
+m.set_body('Build SUCCESS: WF - Unit Tests #')
 sqs_q.write(m)
 
 raw_input("integration tests pass...")
-m.set_body('Build SUCCESS: Integration Tests #')
+m.set_body('Build SUCCESS: WF - Integration Tests #')
 sqs_q.write(m)
 
 raw_input("deploy test pass...")
-m.set_body('Build SUCCESS: Deploy Test #')
+m.set_body('Build SUCCESS: WF - Deploy Test #')
 sqs_q.write(m)
 
 raw_input("deploy to QA pass...")
-m.set_body('Build SUCCESS: Deploy to QA #')
+m.set_body('Build SUCCESS: WF - Deploy to QA #')
 sqs_q.write(m)
 
 raw_input("deploy to Production pass...")
-m.set_body('Build SUCCESS: Deploy to Production #')
+m.set_body('Build SUCCESS: WF - Deploy to Production #')
 sqs_q.write(m)
 
 # =========================================================
 raw_input("Start Second Pipeline...")
+m.set_body('Build SUCCESS: RM - Prepare #')
+sqs_q.write(m)
+
+raw_input("unit tests pass...")
+m.set_body('Build SUCCESS: RM - Unit Tests #')
+sqs_q.write(m)
+
+raw_input("integration test pass..")
+m.set_body('Build SUCCESS: RM - Integration Tests #')
+sqs_q.write(m)
+
+raw_input("deploy test pass..")
+m.set_body('Build SUCCESS: RM - Deploy Test #')
+sqs_q.write(m)
+
+raw_input("deploy to QA pass..")
+m.set_body('Build SUCCESS: RM - Deploy to QA #')
+sqs_q.write(m)
+
+raw_input("deploy to Production pass..")
+m.set_body('Build SUCCESS: RM - Deploy to Production #')
+sqs_q.write(m)
+
+# =========================================================
+raw_input("Start Third Pipeline...")
 m.set_body('Build SUCCESS: DT - Prepare #')
 sqs_q.write(m)
 
 raw_input("unit tests pass...")
-m.set_body('Build SUCCESS: DT - Unit Test #')
+m.set_body('Build SUCCESS: DT - Unit Tests #')
 sqs_q.write(m)
 
 raw_input("oops! abort a hanging deploy test...")
@@ -55,11 +80,14 @@ m.set_body('Build SUCCESS: DT - Deploy Test #')
 sqs_q.write(m)
 
 raw_input("deploy to QA pass..")
-m.set_body('Build SUCCESS: DT - Deploy QA #')
+m.set_body('Build SUCCESS: DT - Deploy to QA #')
+sqs_q.write(m)
+
+raw_input("deploy to Production pass..")
+m.set_body('Build SUCCESS: DT - Deploy to Produciton #')
 sqs_q.write(m)
 
 # =========================================================
-
 
 
 
@@ -74,14 +102,20 @@ jenkins_colours = {
 
 # the entries in STAGES need to be case-sensitive matches of the jenkins build names
 first_pipeline = {
-    'OFFSET' : 0,
-    'STAGE_WIDTH' : 4,
-    'STAGES' : [ 'Prepare', 'Unit Tests', 'Integration Tests', 'Deploy Test', 'Deploy to QA', 'Deploy to Production' ]
+    'OFFSET' : 4,
+    'STAGE_WIDTH' : 2,
+    'STAGES' : [ 'WF - Prepare', 'WF - Unit Tests', 'WF - Integration Tests', 'WF - Deploy Test', 'WF - Deploy to QA', 'WF - Deploy to Production' ]
 }
 
 # the entries in STAGES need to be case-sensitive matches of the jenkins build names
 second_pipeline = {
-    'OFFSET' : 20,
-    'STAGE_WIDTH' : 4,
-    'STAGES' : [ 'DT - Prepare', 'DT - Unit Test', 'DT - Deploy Test', 'DT - Deploy QA' ]
+    'OFFSET' : 14,
+    'STAGE_WIDTH' : 2,
+    'STAGES' : [ 'RM - Prepare', 'RM - Unit Tests', 'RM - Integration Tests', 'RM - Deploy Test', 'RM - Deploy to QA' 'RM - Deploy to Production' ]
+}
+
+third_pipeline = {
+    'OFFSET' : 24,
+    'STAGE_WIDTH' : 2,
+    'STAGES' : [ 'DT - Prepare', 'DT - Unit Tests', 'DT - Deploy Test', 'DT - Deploy to QA', 'DT - Deploy to Production' ]
 }
