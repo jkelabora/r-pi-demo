@@ -84,7 +84,7 @@ m.set_body('Build SUCCESS: DT - Deploy to QA #')
 sqs_q.write(m)
 
 raw_input("deploy to Production pass..")
-m.set_body('Build SUCCESS: DT - Deploy to Produciton #')
+m.set_body('Build SUCCESS: DT - Deploy to Production #')
 sqs_q.write(m)
 
 # =========================================================
